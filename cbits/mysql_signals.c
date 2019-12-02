@@ -7,6 +7,7 @@
 #include <pthread.h>
 #include <signal.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 static sigset_t sigs[1];
 static int sigs_inited;
