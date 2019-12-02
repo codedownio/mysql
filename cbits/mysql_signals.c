@@ -85,37 +85,37 @@ const char *STDCALL _hs_mysql_stat(MYSQL *mysql)
     return ret;
 }
 
-my_bool STDCALL _hs_mysql_commit(MYSQL * mysql)
+bool STDCALL _hs_mysql_commit(MYSQL * mysql)
 {
-    my_bool ret;
+    bool ret;
     block_rts_signals();
     ret = mysql_commit(mysql);
     unblock_rts_signals();
     return ret;
 }
 
-my_bool STDCALL _hs_mysql_rollback(MYSQL * mysql)
+bool STDCALL _hs_mysql_rollback(MYSQL * mysql)
 {
-    my_bool ret;
+    bool ret;
     block_rts_signals();
     ret = mysql_rollback(mysql);
     unblock_rts_signals();
     return ret;
 }
 
-my_bool STDCALL _hs_mysql_autocommit(MYSQL *mysql, my_bool auto_mode)
+bool STDCALL _hs_mysql_autocommit(MYSQL *mysql, bool auto_mode)
 {
-    my_bool ret;
+    bool ret;
     block_rts_signals();
     ret = mysql_autocommit(mysql, auto_mode);
     unblock_rts_signals();
     return ret;
 }
 
-my_bool STDCALL _hs_mysql_change_user(MYSQL *mysql, const char *user,
+bool STDCALL _hs_mysql_change_user(MYSQL *mysql, const char *user,
 				      const char *passwd, const char *db)
 {
-    my_bool ret;
+    bool ret;
     block_rts_signals();
     ret = mysql_change_user(mysql, user, passwd, db);
     unblock_rts_signals();
