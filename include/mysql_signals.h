@@ -8,9 +8,9 @@
 
 #include "mysql.h"
 
-#if !defined(MARIADB_BASE_VERSION) && MYSQL_VERSION_ID >= 80000
-typedef char my_bool;
-#endif
+/* #if !defined(MARIADB_BASE_VERSION) && MYSQL_VERSION_ID >= 80000 */
+/* typedef char my_bool; */
+/* #endif */
 
 MYSQL *STDCALL _hs_mysql_real_connect(MYSQL *mysql, const char *host,
 				      const char *user,
