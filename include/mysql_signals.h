@@ -8,27 +8,23 @@
 
 #include "mysql.h"
 
-/* #if !defined(MARIADB_BASE_VERSION) && MYSQL_VERSION_ID >= 80000 */
-/* typedef char my_bool; */
-/* #endif */
-
 MYSQL *STDCALL _hs_mysql_real_connect(MYSQL *mysql, const char *host,
-				      const char *user,
-				      const char *passwd,
-				      const char *db,
-				      unsigned int port,
-				      const char *unix_socket,
-				      unsigned long clientflag);
+                                      const char *user,
+                                      const char *passwd,
+                                      const char *db,
+                                      unsigned int port,
+                                      const char *unix_socket,
+                                      unsigned long clientflag);
 void STDCALL _hs_mysql_close(MYSQL *sock);
 int STDCALL _hs_mysql_ping(MYSQL *mysql);
 int STDCALL _hs_mysql_real_query(MYSQL *mysql, const char *q,
-				 unsigned long length);
+                                 unsigned long length);
 const char *STDCALL _hs_mysql_stat(MYSQL *mysql);
-my_bool STDCALL _hs_mysql_commit(MYSQL * mysql);
-my_bool STDCALL _hs_mysql_rollback(MYSQL * mysql);
-my_bool STDCALL _hs_mysql_autocommit(MYSQL * mysql, my_bool auto_mode);
-my_bool STDCALL _hs_mysql_change_user(MYSQL *mysql, const char *user,
-				      const char *passwd, const char *db);
+bool STDCALL _hs_mysql_commit(MYSQL * mysql);
+bool STDCALL _hs_mysql_rollback(MYSQL * mysql);
+bool STDCALL _hs_mysql_autocommit(MYSQL * mysql, bool auto_mode);
+bool STDCALL _hs_mysql_change_user(MYSQL *mysql, const char *user,
+                                   const char *passwd, const char *db);
 int STDCALL _hs_mysql_select_db(MYSQL *mysql, const char *db);
 MYSQL_FIELD *STDCALL _hs_mysql_fetch_field(MYSQL_RES *result);
 MYSQL_ROW STDCALL _hs_mysql_fetch_row(MYSQL_RES *result);
