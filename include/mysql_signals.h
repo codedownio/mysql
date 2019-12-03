@@ -7,6 +7,7 @@
 #define _mysql_signals_h
 
 #include "mysql.h"
+#include <stdbool.h>
 
 MYSQL *STDCALL _hs_mysql_real_connect(MYSQL *mysql, const char *host,
                                       const char *user,
